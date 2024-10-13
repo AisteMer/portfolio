@@ -14,7 +14,7 @@ I am Aiste Merfeldaite, a dual degree student in Columbia University and Science
 - **Features:** command execution, input/output redirection, pipes, environment
 variables, signal handling, error handling
 
-### [Malware File Analysis](./Malware File Analysis)
+### [Malware File Analysis](./Malware%20File%20Analysis/)
 - **Description:** A command-line shell implemented in python for analyzing PE files.
 - **Tech Stack:** Python, pefile, peutils
 - **Features:** File type identification, Compile Time Extraction, Packer Identification, Entropy Calculation, Checksum verification, Resource Dumping. 
