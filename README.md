@@ -14,6 +14,11 @@ I am Aiste Merfeldaite, a dual degree student in Columbia University and Science
 - **Features:** command execution, input/output redirection, pipes, environment
 variables, signal handling, error handling
 
+### [Malware File Analysis](./Malware File Analysis)
+- **Description:** A command-line shell implemented in python for analyzing PE files.
+- **Tech Stack:** Python, pefile, peutils
+- **Features:** File type identification, Compile Time Extraction, Packer Identification, Entropy Calculation, Checksum verification, Resource Dumping. 
+
 ### [Quicksort](./Quicksort)
 - **Description:** implements the quicksort algorithm in C
 - **Tech Stack:** C programming, GCC Compiler
@@ -22,5 +27,5 @@ variables, signal handling, error handling
 
 ## Contact
 - [LinkedIn](www.linkedin.com/in/aiste-merfeldaite-56652020b)
-- [Email](mailto:am5678@columbia.edu)
+- [Email](mailto:aiste.merf@gmail.com)
 
