@@ -1,11 +1,11 @@
 # Portfolio
 
-Hi,
-I am Aiste Merfeldaite, a dual degree student in Columbia University and Sciences Po, where I am studying Computer Science and Political Science. My interests lie in cybersecurity, threat analysis and ethical use of technology. This portfolio showcases some of the projects I have worked on.
+Hi!
+I am Aiste Merfeldaite -- a dual degree student in Columbia University and Sciences Po, where I am studying Computer Science and Political Science. This portfolio showcases some of the projects I have worked on. You can read more about them here!
 
 ## Skills
-- **Languages** Java, C, Python
-- **Tools** Git, VS Code
+- **Languages** Java, Python, C, SQL, Assembly x86
+- **Tools** Git, VS Code, IDA Pro
 
 ## Projects
 ### [Minishell](./Minishell)
