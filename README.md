@@ -19,10 +19,10 @@ variables, signal handling, error handling
 - **Tech Stack:** Python, pefile, peutils
 - **Features:** File type identification, Compile Time Extraction, Packer Identification, Entropy Calculation, Checksum verification, Resource Dumping. 
 
-### [Quicksort](./Quicksort)
-- **Description:** implements the quicksort algorithm in C
-- **Tech Stack:** C programming, GCC Compiler
-- **Features:** in-place sorting, recursive implementation, partitioning
+### [Interactive web app](./Quicksort)
+- **Description:** An interactive web app about the history of music in New York City through storytelling, quizzes, and thematic UI design
+- **Tech Stack:** Python (Flask), HTML, CSS, Jinja2 Templates
+- **Features:** Multi-page routing, map-based navigation, custom-designed pages for historical periods, interactive quizzes, modular template structure
 
 
 ## Contact
