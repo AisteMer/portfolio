@@ -1,0 +1,15 @@
+{
+    "question": "What decades did the Harlem renaissance span?",
+    "options": [
+      "1910s",
+      "1920s",
+      "1930s",
+      "1940s",
+      "1950s"
+    ],
+    "correctAnswers": ["1920s", "1930s"],
+    "feedback": {
+      "correct": "Correct! The Harlem Renaissance primarily spanned the 1920s and 1930s.",
+      "incorrect": "Incorrect. The Harlem Renaissance primarily spanned the 1920s and 1930s."
+    }
+}

@@ -1,0 +1,79 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<style>
+  .arrow-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #80bfff;
+    color: black;
+    font-weight: bold;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+  }
+
+  .arrow-button:hover {
+    background-color: #66a3ff;
+  }
+
+  .title-container{
+  margin-bottom: 20px;
+  padding: 30px;
+  font-size: 1.8rem;
+  font-weight: bold;
+  text-align: center;
+  }
+
+  .no-quiz-message {
+    padding-left: 60px;
+    font-size: 1.5rem;
+  }
+</style>
+
+  <div class="title-container">Your Quiz Results</div>
+
+  {% if results %}
+    {% set quiz_names = {'quiz1': 'Genres and Neighborhoods', 'quiz2': 'Genres Timeline', 'quiz3': 'Iconic Venues'} %}
+    <div class="container py-4">
+      <div class="row gx-4">
+        {% for quiz_id, result in results.items() %}
+          <div class="col-md-4 mb-4">
+            <div class="card h-100 border-0" style="background-color: #e6f7ff;">
+              <div class="card-body">
+                <h5 class="card-title">{{ quiz_names[quiz_id] }}</h5>
+                <p class="card-text">Score: {{ result.score }} / {{ result.answers|length }}</p>
+                <details>
+                  <summary>See your answers</summary>
+                  <ul class="list-unstyled mt-2">
+                    {% for genre, borough in result.answers.items() %}
+                      {% if quiz_id == 'quiz3' %}
+                        {% if borough %}
+                          <li><strong>{{ genre }}</strong>: Dropped {{ borough.replace('drop_', '').replace('_', ' ') }}</li>
+                        {% else %}
+                          <li><strong>{{ genre }}</strong>: No venue selected</li>
+                        {% endif %}
+                      {% else %}
+                        <li><strong>{{ genre }}</strong>: {{ borough if borough else 'No answer submitted' }}</li>
+                      {% endif %}
+                    {% endfor %}
+                  </ul>
+                </details>
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  Z{% else %}
+    <p class="no-quiz-message">You haven't completed any quizzes yet.</p>
+  {% endif %}
+
+  <div class="text-center mt-5">
+    <a href="{{ url_for('quiz3') }}" class="arrow-button">
+        <i class="me-2">←</i> Back
+    </a>
+    <a href="{{ url_for('home') }}" class="arrow-button">
+        Home <i class="ms-2">→</i>
+    </a>
+  </div>{% endblock %}

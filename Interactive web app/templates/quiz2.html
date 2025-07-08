@@ -1,0 +1,60 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/quiz.css') }}">
+
+  <div class="question-container">
+    <span class="question-num">Question 2:</span> Place the genres on the timeline
+  </div>
+
+  <div class="boroughs">
+    <div class="borough" ondrop="drop(event)" ondragover="allowDrop(event)" id="1920s-1930s">
+      <h3>1920s - 1930s</h3>
+    </div>
+    <div class="borough" ondrop="drop(event)" ondragover="allowDrop(event)" id="1950s-1960s">
+      <h3>1950s - 1960s</h3>
+    </div>
+    <div class="borough" ondrop="drop(event)" ondragover="allowDrop(event)" id="1970s">
+      <h3>1970s</h3>
+    </div>
+  </div>
+
+  <div id="genres"></div>
+
+  <button id="submit-btn" class="submit-btn" onclick="checkAnswers()">Submit Answers</button>
+  
+  <div id="overlay" class="hidden"></div>
+
+  <div id="feedback-box" class="hidden">
+    <p id="feedback-message"></p>
+    <div class="feedback-buttons">
+      <button id="retry-btn" class="check-btn">Try Again</button>
+      <button id="continue-btn" class="check-btn">See explanation</button>
+    </div>
+  </div>
+  
+  <div id="ex-overlay" class="hidden"></div>
+
+  <div id="explanation-box" class="hidden">
+    <h3>Correct Answers</h3>
+    <ul id="explanation-list"></ul>
+    <button id="ex-close-btn" class="check-btn">Next</button>
+  </div>
+
+  <div class="text-center mt-5">
+    <a href="{{ url_for('quiz1') }}" class="arrow-button">
+        <i class="me-2">←</i> Back
+    </a>
+    <a href="{{ url_for('quiz3') }}" class="arrow-button">
+        Next <i class="ms-2">→</i>
+    </a>
+  </div>
+
+  
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/quiz2.js') }}"></script>
+{% endblock %}

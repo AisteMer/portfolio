@@ -1,0 +1,144 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<style>
+  .guitar {
+    width: 300px;
+    cursor: pointer;
+    margin: 20px auto;
+    display: block;
+    transition: all 0.3s ease;
+    filter: drop-shadow(0 4px 6px rgba(0,0,0,0.1));
+  }
+  
+  .guitar:hover {
+    transform: scale(1.05);
+    filter: drop-shadow(0 6px 10px rgba(0,0,0,0.2));
+  }
+  
+  .now-playing {
+    display: none;
+    color: #80bfff;
+    font-weight: 600;
+    margin-top: 10px;
+    animation: pulse 2s infinite;
+  }
+  
+  .pin-link {
+    position: absolute;
+    top: 49%;   
+    left: 49%;
+    transform: translate(-50%, -100%); /* center the pin horizontally, place its tip */
+    z-index: 10;
+  }
+
+  .pin-img {
+    width: 68px;  /* or whatever size you want */
+    height: auto;
+    transition: transform 0.2s ease;
+  }
+
+  .pin-img:hover {
+    transform: translateY(-7px);  /* moves the pin upward */ 
+  }
+
+
+</style>
+
+<div class="container mt-4">
+  <!-- Title Section -->
+  <div class="row title-section">
+    <div class="col-12">
+      <h1 class="fw-bold">1970s punk scene</h1>
+      <p class="fs-5">The rising punk scene evolved in Manhattan's East Village in the 1970s. Punk rock evolved into a movement for nonconformists and political reform.</p>
+    </div>
+  </div>
+
+  <div class="row">
+    <!-- Map Section -->
+    <div class="col-md-6 mb-4">
+      <div class="map-container position-relative">
+        <img src="{{ url_for('static', filename='images/map.jpg') }}" alt="LES on the NYC map" class="map-img">
+        <a href="{{ url_for('cbgb') }}" class="pin-link" aria-label="Go to CBGB page">
+          <img src="{{ url_for('static', filename='images/pin.jpg') }}" alt="CBGB pin" class="pin-img">
+        </a>
+      </div>
+      <div class="text-center mt-3">
+        <p class="fs-5">Click on the pin to see the bar CBGB.</p>
+      </div>
+    </div>
+
+
+    <!-- Info Section -->
+    <div class="col-md-6">
+      <div class="info-section text-start">
+        <p class="fs-5">Click on the guitar to listen to a clip of an artist.</p>
+
+        <!-- Sax -->
+        <div onclick="toggleAudio('audio1')" class="text-center">
+          <img src="https://thumbs.dreamstime.com/b/blue-electric-bass-guitar-four-strings-black-fretboard-vector-illustration-design-using-ai-tool-bass-guitar-clip-art-361722781.jpg" alt="guitar" class="guitar">
+          <div class="caption">
+            <em>I wanna be sedated</em>
+            <strong>The Ramones</strong>
+          </div>
+          <audio id="audio1" src="{{ url_for('static', filename='audio/punk.mp3') }}"></audio>
+        </div>
+
+        <!-- Tags -->
+        <div class="mb-4">
+          <p><span class="tag-grey">Music styles:</span></p>
+          <div>
+            <span class="tag">Punk</span>
+            <span class="tag">Rock</span>
+            <span class="tag">New Wave</span>
+          </div>
+        </div>
+        
+        <div>
+          <p><span class="tag-grey">Time period:</span></p>
+          <div>
+            <span class="tag">1970s</span>
+            <span class="tag">1980s</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="text-center mt-5">
+  <a href="{{ url_for('harlem_quiz') }}" class="arrow-button me-3">
+    <i class="me-2">←</i> Back
+  </a>
+  <a href="{{ url_for('cbgb') }}" class="arrow-button">
+    Next <i class="ms-2">→</i>
+  </a>
+</div>
+
+<script>
+  function toggleAudio(id) {
+    const audio = document.getElementById(id);
+    const nowPlaying = document.getElementById('now-playing');
+    
+    // Pause any other playing audio first
+    document.querySelectorAll('audio').forEach(a => {
+      if (a.id !== id) a.pause();
+    });
+  
+    if (audio.paused) {
+      audio.play();
+      nowPlaying.style.display = 'block';
+    } else {
+      audio.pause();
+      nowPlaying.style.display = 'none';
+    }
+  }
+  
+  // Hide now playing when audio ends
+  document.getElementById('audio1').addEventListener('ended', function() {
+    document.getElementById('now-playing').style.display = 'none';
+  });
+</script>
+{% endblock %}

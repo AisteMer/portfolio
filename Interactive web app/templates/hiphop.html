@@ -1,0 +1,137 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<style>
+  .jukebox {
+    width: 300px;
+    cursor: pointer;
+    margin: 20px;
+  }
+
+  .jukebox:hover {
+      transform: scale(1.05);
+      filter: drop-shadow(0 6px 10px rgba(0,0,0,0.2));
+  }
+
+  .pin-link {
+    position: absolute;
+    top: 24%;   
+    left: 60%;
+    transform: translate(-50%, -100%); /* center the pin horizontally, place its tip */
+    z-index: 10;
+  }
+
+  .pin-img {
+    width: 68px;  /* or whatever size you want */
+    height: auto;
+    transition: transform 0.2s ease;
+  }
+
+  .pin-img:hover {
+    transform: translateY(-7px);  /* moves the pin upward */ 
+  }
+</style>
+
+<div class="container mt-4">
+  <!-- Title Section -->
+  <div class="row title-section">
+    <div class="col-12">
+      <h1 class="fw-bold">Hip Hop in the Bronx</h1>
+      <p class="fs-5">Morris Heights in the Bronx was the birthplace of Hip Hop music in the 1970s. Disc jockeys (DJs) from the neighborhood mixed R&B, soul and funk records into a new genre.</p>
+    </div>
+  </div>
+
+  <div class="row">
+    <!-- Map Section -->
+    <div class="col-md-6 mb-4">
+      <div class="map-container position-relative">
+        <img src="{{ url_for('static', filename='images/map.jpg') }}" alt="the Bronx on the NYC map" class="map-img">
+        <a href="{{ url_for('the_bronx') }}" class="pin-link" aria-label="Go to the Bronx page">
+          <img src="{{ url_for('static', filename='images/pin.jpg') }}" alt="Bronx pin" class="pin-img">
+        </a>
+      </div>
+      <div class="text-center mt-3">
+        <p class="fs-5">Click on the pin to see Morris Heights.</p>
+      </div>
+    </div>
+
+    <!-- Right Column: Info & Jukeboxes -->
+    <div class="col-md-6">
+        <div class="info-section text-start">
+          <p class="fs-5">Click on a jukebox to listen to a clip of an artist from the Bronx.</p>
+  
+          <div class="row">
+            <!-- Jukebox 1 -->
+            <div class="col-md-6 mb-4">
+              <div onclick="toggleAudio('audio1')" class="text-center">
+                <img src="{{ url_for('static', filename='images/jukebox.jpg') }}" class="jukebox">
+                <div class="caption">
+                  <em>South Bronx</em>
+                  <strong>KRS-One</strong>
+                </div>
+                <audio id="audio1" src="{{ url_for('static', filename='audio/south_bronx.mp3') }}"></audio>
+              </div>
+            </div>
+  
+            <!-- Jukebox 2 -->
+            <div class="col-md-6 mb-4">
+              <div onclick="toggleAudio('audio2')" class="text-center">
+                <img src="{{ url_for('static', filename='images/jukebox.jpg') }}" class="jukebox">
+                <div class="caption">
+                  <em>Funky</em>
+                  <strong>Ultramagnetic MC's</strong>
+                </div>
+                <audio id="audio2" src="{{ url_for('static', filename='audio/funky.mp3') }}"></audio>
+              </div>
+            </div>
+          </div>
+  
+          <!-- Tags Section -->
+          <div class="mt-4">
+            <p><span class="tag-grey">Music styles:</span></p>
+            <div>
+              <span class="tag">Hip Hop</span>
+              <span class="tag">DJ Culture</span>
+            </div>
+          </div>
+  
+          <div class="mt-3">
+            <p><span class="tag-grey">Time period:</span></p>
+            <div>
+              <span class="tag">1970s</span>
+              <span class="tag">1980s</span>
+              <span class="tag">1990s</span>
+            </div>
+          </div>
+  
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="text-center mt-5">
+    <a href="{{ url_for('cbgb') }}" class="arrow-button me-3">
+      <i class="me-2">←</i> Back
+    </a>
+    <a href="{{ url_for('the_bronx') }}" class="arrow-button">
+      Next <i class="ms-2">→</i>
+    </a>
+  </div>
+
+<script>
+    function toggleAudio(id) {
+      const audio = document.getElementById(id);
+      
+      // Pause any other playing audio first
+      document.querySelectorAll('audio').forEach(a => {
+        if (a.id !== id) a.pause();
+      });
+    
+      if (audio.paused) {
+        audio.play();
+      } else {
+        audio.pause();
+      }
+    }
+</script>
+{% endblock %}
