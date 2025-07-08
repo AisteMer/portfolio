@@ -1,0 +1,19 @@
+{
+    "quiz1": {
+      "Hip Hop": "Hip-hop began with block parties in Morris Heights.",
+      "Jazz and Blues": "Harlem clubs popularized jazz and blues nationally.",
+      "Punk": "East Village’s CBGB sparked New York’s punk scene.",
+      "Salsa": "Midtown Manhattan’s Palladium made salsa dance popular."
+    },
+    "quiz2": {
+      "Jazz": "Jazz peaked in the 1920s–30s swing era.",
+      "Salsa": "Salsa grew in 1950s–60s NYC Latino communities.",
+      "Punk": "Punk exploded in the 1970s DIY NYC scene.",
+      "Hip-hop": "Hip-hop started in the 1970s Bronx block parties."
+    },
+    "quiz3": {
+      "Cheetah Club": "Cheetah Club was a top disco spot in NYC.",
+      "CBGB": "CBGB launched New York punk in the 1970s."
+    }
+  }
+  

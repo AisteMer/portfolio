@@ -1,0 +1,238 @@
+.boroughs {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 30px;
+  }
+  
+  .borough {
+    border: none;
+    border-radius: 10px;
+    padding: 20px;
+    width: 20%;
+    min-height: 200px;
+    text-align: center;
+    background-color: #f0f0f0;
+  }
+  
+  .borough h3 {
+    margin-bottom: 15px;
+  }
+
+#genres {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 20px;
+  min-height: 100px;
+  align-items: flex-start;
+}
+
+
+.genre {
+
+  flex: none !important;
+  width: auto !important;
+  white-space: nowrap !important;
+  margin: 10px;
+  padding: 4px 10px;
+  background-color: #74b4f8;
+  border: none;
+  border-radius: 3px;
+  cursor: grab;
+}
+  
+  .genre.dragging {
+    opacity: 0.5;
+  }
+
+  
+  .boroughs {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 30px;
+    position: relative;
+    padding-top: 30px;
+  }
+  
+  .borough {
+    border: none;
+    border-radius: 20px;
+    padding: 20px;
+    width: 20%;
+    min-height: 150px;
+    text-align: center;
+    background-color: #f0f0f0;
+  }
+  
+  .borough h3 {
+    margin-bottom: 10px;
+  }
+  
+  .borough img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    margin-top: 10px;
+    border-radius: 8px;
+    pointer-events: none; 
+  }
+  
+  .feedback {
+    margin-top: 20px;
+    padding: 15px;
+    border: 2px solid #333;
+    border-radius: 8px;
+    max-width: 500px;
+    background-color: #fefefe;
+    text-align: center;
+    font-size: 1rem;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  }
+  
+  .hidden {
+    display: none;
+  }
+  
+  .check-btn {
+    padding: 10px 20px;
+    background-color: #2b90f6;
+    color: black;
+    border: none;
+    border-radius: 3px;
+    margin-left: 30px;
+  }
+  .check-btn:hover {
+    background-color: #a5cff8;
+  }
+
+  .submit-btn {
+    display: block;
+    width: 90%;              /* Almost full width of the parent container */
+    max-width: 800px;        /* Optional: set a max width for large screens */
+    margin: 20px auto;       /* Center horizontally and add vertical margin */
+    padding: 20px 40px;      /* Bigger padding for a larger button */
+    font-size: 1.5rem;       /* Increase text size */
+    background-color: #80bfff;
+    color: black;
+    border: none;
+    border-radius: 10px;
+    text-align: center;
+    cursor: pointer;
+    font-weight: bold;
+  }
+  .submit-btn:hover {
+    background-color: #a5cff8;
+  }
+
+#overlay {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw;  height: 100vh;
+  background: rgba(0,0,0,0.5);
+  z-index: 999;
+}
+
+#feedback-box {
+  position: fixed;
+  top: 50%;  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+  background: white;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+  max-width: 90%;
+  width: 320px;
+  text-align: center;
+}
+
+.hidden {
+  display: none;
+}
+
+.feedback-buttons {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 15px;
+}
+
+.feedback-buttons .check-btn {
+  flex: 1;
+  margin: 0 5px;
+}
+
+.check-btn {
+  padding: 10px 20px;
+  background-color: #80bfff;
+  color: black;
+  font-weight: bold;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+.check-btn:hover {
+  background-color: #a5cff8;
+}
+
+#ex-overlay {
+  position: fixed;
+  top:0; left:0;
+  width:100vw; height:100vh;
+  background: rgba(0,0,0,0.5);
+  z-index: 999;
+}
+
+#explanation-box {
+  position: fixed;
+  top:50%; left:50%;
+  transform: translate(-50%,-50%);
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+  z-index: 1000;
+  width: 500px;              
+  text-align: left;
+}
+
+.hidden { display: none; }
+
+#explanation-list {
+  list-style: none;
+  padding-left: 0;
+}
+#explanation-list li {
+  margin: 6px 0;
+}
+#explanation-box button {
+  display: block;
+  margin: 20px auto 0;  /* 20px top margin, auto left/right, 0 bottom */
+}
+
+.arrow-button {
+  background-color: #80bfff;
+  color: #333;
+  font-weight: 600;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 3px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  display: inline-block;
+  text-decoration: none;
+}
+
+.question-container{
+  margin-bottom: 20px;
+  padding: 30px;
+  font-size: 1.8rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+.question-num{
+  font-weight: bold;
+  color: #909090;
+  font-size: 1.8rem;
+  display: inline;
+}

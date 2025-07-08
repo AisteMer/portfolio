@@ -1,0 +1,15 @@
+{
+    "question": "Hip Hop was created in the...?",
+    "options": [
+      "1950s",
+      "1960s",
+      "1970s",
+      "1980s",
+      "1990s"
+    ],
+    "correctAnswer": ["1970s"],
+    "feedback": {
+      "correct": "Correct! Hip Hop was created in the 1970's in Morris Heights.",
+      "incorrect": "Not quite. Hip Hop was created in the 1970's in Morris Heights."
+    }
+}

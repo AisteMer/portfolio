@@ -1,0 +1,86 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
+<div class="container mt-4">
+  <!-- Title Section -->
+  <div class="row title-section">
+    <div class="col-12">
+      <h1 class="fw-bold">The Cheetah Club</h1>
+      <p class="fs-5">The Cheetah Club in Midtown helped salsa music migrate and popularized the genre to mainstream America.</p>
+    </div>
+  </div>
+
+  <div class="row">
+      <!-- Map Section -->
+      <div class="col-md-6 mb-4">
+        <div class="map-container">
+          <img src="{{ url_for('static', filename='images/map_midtown.jpg') }}" alt="midtown on the NYC map" class="map-img">
+        </div>
+        <div class="text-center mt-3">
+          <a href="{{ url_for('quiz1') }}" class="arrow-button">
+            TAKE THE QUIZ <i class="ms-2">→</i>
+          </a>
+        </div>
+
+      </div>
+
+      <div class="col-md-6">
+        <div class="info-section">        
+          <p class="fs-5 mt-4">Click through the slideshow to see the Cheetah Club:</p>
+
+          <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <img src="{{ url_for('static', filename='images/salsa1.jpg') }}" class="d-block w-100" alt="the Cheetah Club">
+                  <div class="carousel-caption d-none d-md-block">
+                    <h5>The Cheetah club</h5>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <img src="{{ url_for('static', filename='images/salsa2.jpg') }}" class="d-block w-100" alt="the Cheetah Club">
+                  <div class="carousel-caption d-none d-md-block">
+                    <h5>NYC supergroup the Fania All Stars</h5>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <img src="{{ url_for('static', filename='images/salsa3.jpg') }}" class="d-block w-100" alt="the Cheetah Club">
+                  <div class="carousel-caption d-none d-md-block">
+                    <h5>Fania All Stars live at the Cheetah club</h5>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <img src="{{ url_for('static', filename='images/salsa4.jpg') }}" class="d-block w-100" alt="the Cheetah Club">
+                  <div class="carousel-caption d-none d-md-block">
+                    <h5>Inside the club</h5>
+                  </div>
+                </div>
+              </div>
+            
+              <!-- Controls -->
+              <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon"></span>
+              </button>
+            </div>
+      </div>
+  </div>
+  </div>
+
+  <div class="text-center mt-5">
+    <a href="{{ url_for('salsa') }}" class="arrow-button">
+        <i class="me-2">←</i> Back
+    </a>
+    <a href="{{ url_for('quiz1') }}" class="arrow-button">
+        Next <i class="ms-2">→</i>
+    </a>
+  </div>
+</div>
+
+<!-- Bootstrap JS (at end of body) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+
+{% endblock %}
