@@ -5,7 +5,7 @@ I am Aiste Merfeldaite -- a dual degree student in Columbia University and Scien
 
 ## Skills
 - **Languages** Java, Python, C, SQL, Assembly x86
-- **Tools** Git, VS Code, IDA Pro
+- **Tools** Git, VS Code, IDA Pro, Ghidra
 
 ## Projects
 ### [Minishell](./Minishell)
